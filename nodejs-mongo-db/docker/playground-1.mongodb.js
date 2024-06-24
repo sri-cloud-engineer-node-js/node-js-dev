@@ -24,6 +24,8 @@ db.getCollection('sales').insertMany([
   { 'item': 'abc', 'price': 10, 'quantity': 5, 'date': new Date('2016-02-06T20:20:13Z') },
 ]);
 
+db.posts.find({}, {_id: 0, title: 1, date: 1})
+
 // Run a find command to view items sold on April 4th, 2014.
 const salesOnApril4th = db.getCollection('sales').find({
   date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') }
